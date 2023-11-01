@@ -42,7 +42,13 @@ data class Experience(
 
 data class Language(
     val nom: String,
-)
+    val percentage: Int,
+) {
+    fun getFloat(): Float {
+        val floatValue = percentage.toFloat() / 100.0f;
+        return floatValue;
+    }
+}
 
 data class Competence(
     val nom: String,
@@ -52,8 +58,6 @@ data class CentreInteret(
     val nom: String,
 )
 
-
-// Exemple d'objet CV
 val adrienCV = CVDatas(
     nom = "Poulain",
     prenom = "Adrien",
@@ -74,14 +78,16 @@ val adrienCV = CVDatas(
         Experience("Développeur R", "Data Legal Drive", 2021, 2021, "Stage. Développement d'une application de statistique en R"),
     ),
     langages = listOf(
-        Language("Anglais"),
-        Language("Allemand"),
-        Language("Japonnais"),
+        Language("Anglais", 70),
+        Language("Allemand", 20),
+        Language("Japonnais", 35),
     ),
     competences = listOf(
-        Competence("Audacieux"),
+        Competence("Curieux"),
         Competence("Travail d'équipe"),
         Competence("Autonome"),
+        Competence("Motivation"),
+        Competence("Organisation"),
     ),
     interets = listOf(
         CentreInteret("Photographie"),

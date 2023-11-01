@@ -21,8 +21,11 @@ import elements.Formations
 import elements.Infos
 import elements.Interests
 import elements.Languages
+import elements.ProfileImage
 import elements.Skills
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     Row {
@@ -33,6 +36,8 @@ fun App() {
                 .background(Color.LightGray)
                 .padding(10.dp)
         ) {
+            ProfileImage()
+            Spacer(Modifier.height(10.dp))
             Contact()
             Spacer(Modifier.height(10.dp))
             Languages()
